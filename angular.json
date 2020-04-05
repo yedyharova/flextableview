@@ -140,5 +140,8 @@
       }
     }
   },
-  "defaultProject": "flextableview"
+  "defaultProject": "flextableview",
+  "cli": {
+    "analytics": "6ea68cfc-870a-4ea7-9341-4663654da721"
+  }
 }
