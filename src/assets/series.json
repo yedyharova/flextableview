@@ -1,0 +1,244 @@
+{
+  "series": [
+    {
+      "id": "americancrime",
+      "name": "American Crime",
+      "year": 2015,
+      "genre": ["Сrime Drama"],
+      "network": "ABC"
+    },
+    {
+      "id": "ashvsevildead",
+      "name": "Ash vs Evil Dead",
+      "year": 0,
+      "genre": ["Supernatural", "Comedy", "Horror", "Fantasy", "Action"],
+      "network": "Starz"
+    },
+    {
+      "id": "americanhorrorstory",
+      "name": "American Horror Story",
+      "year": "05.10.2011",
+      "genre": ["Horror"],
+      "network": "FX"
+    },
+    {
+      "id": "blackmirror",
+      "name": "Black Mirror",
+      "year": "04.12.2011",
+      "genre": ["Science Fiction"],
+      "network": "Netflix"
+    },
+    {
+      "id": "bloodline",
+      "name": "Bloodline",
+      "year": "20.03.2015",
+      "genre": ["Drama"],
+      "network": "Netflix"
+    },
+    {
+      "id": "thecrown",
+      "name": "The Crown",
+      "year": "04.11.2016",
+      "genre": ["Drama"],
+      "network": "Netflix"
+    },
+    {
+      "id": "dark",
+      "name": "Dark",
+      "year": "01.12.2017",
+      "genre": ["Drama"],
+      "network": "Netflix"
+    },
+    {
+      "id": "deadtome",
+      "name": "Dead to Me",
+      "year": "03.05.2019",
+      "genre": ["Comedy"],
+      "network": "Netflix"
+    },
+    {
+      "id": "dexter",
+      "name": "Dexter",
+      "year": "01.10.2006",
+      "genre": ["Drama"],
+      "network": "ShowTime"
+    },
+    {
+      "id": "dracula",
+      "name": "Dracula",
+      "year": "01.01.2020",
+      "genre": ["Horror"],
+      "network": "Netflix"
+    },
+    {
+      "id": "theendofthefuckingworld",
+      "name": "The End of the Fucking World",
+      "year": "24.10.2017",
+      "genre": ["Drama", "Comedy"],
+      "network": "Channel 4"
+    },
+    {
+      "id": "glow",
+      "name": "GLOW",
+      "year": "23.06.2017",
+      "genre": ["Drama", "Criminal"],
+      "network": "Netflix"
+    },
+    {
+      "id": "godless",
+      "name": "Godless",
+      "year": "22.11.2017",
+      "genre": ["Drama"],
+      "network": "Netflix"
+    },
+    {
+      "id": "greatnews",
+      "name": "Great News",
+      "year": "25.04.2017",
+      "genre": ["Comedy"],
+      "network": "NBC"
+    },
+    {
+      "id": "haltandcatchfire",
+      "name": "Halt and Catch Fire",
+      "year": "01.06.2014",
+      "genre": ["Drama"],
+      "network": "AMC"
+    },
+    {
+      "id": "houseofcards",
+      "name": "House of Cards",
+      "year": "01.02.2013",
+      "genre": ["Drama"],
+      "network": "Netflix"
+    },
+    {
+      "id": "theinbetweeners",
+      "name": "The Inbetweeners",
+      "year": "01.05.2008",
+      "genre": ["Comedy"],
+      "network": "E4"
+    },
+    {
+      "id": "*iamnotokaywiththis",
+      "name": "*I Am Not Okay With This",
+      "year": "26.02.2020",
+      "genre": ["Comedy", "Drama"],
+      "network": "Netflix"
+    },
+    {
+      "id": "ithinkyoushouldleave",
+      "name": "I Think You Should Leave",
+      "year": "23.04.2019",
+      "genre": ["Comedy"],
+      "network": "Netflix"
+    },
+    {
+      "id": "masterofnone",
+      "name": "Master of None",
+      "year": "06.11.2015",
+      "genre": ["Comedy"],
+      "network": "Netflix"
+    },
+    {
+      "id": "maniac",
+      "name": "Maniac",
+      "year": "21.09.2018",
+      "genre": ["Comedy"],
+      "network": "Netflix"
+    },
+    {
+      "id": "makingamurderer",
+      "name": "Making a Murderer",
+      "year": "18.12.2015",
+      "genre": ["Detective"],
+      "network": "Netflix"
+    },
+    {
+      "id": "nursejackie",
+      "name": "Nurse Jackie",
+      "year": "08.06.2009",
+      "genre": ["Drama"],
+      "network": "Showtime"
+    },
+    {
+      "id": "newgirl",
+      "name": "New girl",
+      "year": "20.09.2011",
+      "genre": ["Comedy"],
+      "network": "Fox"
+    },
+    {
+      "id": "theoffice",
+      "name": "The Office",
+      "year": "25.03.2005",
+      "genre": ["Comedy"],
+      "network": "NBC"
+    },
+    {
+      "id": "onmyblock",
+      "name": "On My Block",
+      "year": "16.03.2018",
+      "genre": ["Comedy"],
+      "network": "Netflix"
+    },
+    {
+      "id": "orangeisthenewblack",
+      "name": "Orange Is the New Black",
+      "year": "11.06.2013",
+      "genre": ["Comedy", "Drama"],
+      "network": "Netflix"
+    },
+    {
+      "id": "onedayatatime",
+      "name": "One Day at a Time",
+      "year": "06.01.2017",
+      "genre": ["Comedy"],
+      "network": "Netflix"
+    },
+    {
+      "id": "peeweesplayhouse",
+      "name": "Pee-wees Playhouse",
+      "year": "13.09.1986",
+      "genre": ["Comedy"],
+      "network": "CBS"
+    },
+    {
+      "id": "parksandrecreation",
+      "name": "Parks and Recreation",
+      "year": "09.04.2009",
+      "genre": ["Comedy"],
+      "network": "NBC"
+    },
+    {
+      "id": "ozark",
+      "name": "Ozark",
+      "year": "21.06.2017",
+      "genre": ["Drama"],
+      "network": "Netflix"
+    }
+  ],
+  "genres": [
+    "Crime drama",
+    "Supernatural",
+    "Comedy",
+    "Drama",
+    "Horror",
+    "Fantasy",
+    "Action",
+    "Detective",
+    "Science fiction"
+  ],
+  "networks": [
+    "ABC",
+    "Starz",
+    "FX",
+    "Netflix",
+    "NBC",
+    "CBS",
+    "Fox",
+    "Showtime",
+    "Channel 4",
+    "AMC"
+  ]
+}

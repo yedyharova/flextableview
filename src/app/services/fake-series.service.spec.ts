@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FakeAPIServiceService } from './fake-apiservice.service';
+import { SeriesService } from './fake-series.service';
 
 describe('FakeAPIServiceService', () => {
-  let service: FakeAPIServiceService;
+  let service: SeriesService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(FakeAPIServiceService);
+    service = TestBed.inject(SeriesService);
   });
 
   it('should be created', () => {
