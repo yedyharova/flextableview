@@ -1,0 +1,56 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  padding: 3em;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+@font-face {
+  font-family: opensanscondensed;
+  src: url(assets/fonts/Open_Sans_Condensed/OpenSansCondensed-Light.ttf) format("truetype");
+}
+
+body {
+  --text-color: rgb(29, 27, 27);
+  --link-color: #8a27ec;
+  --link-active-bg-color: #dccfe8;
+}
+
+* {
+  font-family: "opensanscondensed", "lato", "arial", sans-serif;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+  &:before {
+    content: attr(aria-label);
+    font-size: 120%;
+    font-weight: bold;
+    margin-left: -15px;
+  }
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: var(--link-color);
+  cursor: pointer;
+
+  &.active, &:hover {
+    background-color: var(--link-active-bg-color);
+    border-radius: 10%;
+  }
+}

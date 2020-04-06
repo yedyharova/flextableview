@@ -3,7 +3,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 @Component({
   selector: 'app-tableview',
   templateUrl: './tableview.component.html',
-  styleUrls: ['./tableview.component.sass'],
+  styleUrls: ['./tableview.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TableviewComponent implements OnInit {

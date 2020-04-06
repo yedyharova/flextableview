@@ -1,0 +1,19 @@
+.navigation-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  ul {
+    padding-inline-start: 0;
+    li {
+      display: inline-flex;
+      margin-left: 1em;
+      a {
+        padding: 0.2em;
+      }
+    }
+  }
+}
