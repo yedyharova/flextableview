@@ -1,8 +1,9 @@
 import { Injectable } from "@angular/core";
-import { Observable, empty, Subject } from "rxjs";
+import { Observable, Subject, of } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { Series, SeriesStore, SeriesQuery } from "@models/series";
 import { map, switchMap } from "rxjs/operators";
+import { PagedResultGetter } from "@common/PagedResultGetter";
 
 @Injectable({
   providedIn: "root",
@@ -25,8 +26,21 @@ export class SeriesService {
   }
 
   series$: Observable<Series[]> = this.seriesQuery.select(
-    (store) => store.series
+    (store) =>
+      store.series.map((s) => {
+        return new Series(s);
+      }) //TODO check
   );
+  seriesPaged$: PagedResultGetter<Series> = ((
+    page: number,
+    pageSize: number
+  ): Observable<Series[]> => {
+    return this.series$.pipe(
+      switchMap((series: Series[]) =>
+        of(series.slice(page * pageSize, page * pageSize + pageSize))
+      )
+    );
+  }).bind(this);
   genres$: Observable<string[]> = this.seriesQuery.select(
     (store) => store.genres
   );
@@ -43,9 +57,7 @@ export class SeriesService {
     return this.http.get("assets/series.json").pipe(
       map((series: any) => {
         return this.seriesStore.update({
-          series: series.series.map((s: any) => {
-            return s as Series;
-          }),
+          series: series.series,
           genres: series.genres,
           networks: series.networks,
         });

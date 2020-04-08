@@ -12,17 +12,42 @@
   overflow-x: hidden;
   overflow-y: auto;
   scrollbar-width: thin;
+
+  > * {
+    width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+  }
+
+  @media (max-width: 414px) {
+    padding: 3em 0.5em;
+  }
 }
 
 @font-face {
   font-family: opensanscondensed;
-  src: url(assets/fonts/Open_Sans_Condensed/OpenSansCondensed-Light.ttf) format("truetype");
+  src: url(assets/fonts/Open_Sans_Condensed/OpenSansCondensed-Light.ttf)
+    format("truetype");
 }
 
 body {
   --text-color: rgb(29, 27, 27);
   --link-color: #8a27ec;
   --link-active-bg-color: #dccfe8;
+  --defined-color-0: #924dd6;
+  --defined-color-1: #f0994a;
+  --defined-color-2: #ba6ad8;
+  --defined-color-3: #eb5757;
+  --defined-color-4: #828282;
+  --defined-color-5: #f2eafa;
+  --defined-color-6: #4f4f4f;
+  /*   --defined-color-7: #924dd6;
+  --defined-color-8: #924dd6;
+  --defined-color-9: #924dd6;
+  --defined-color-10: #924dd6;
+  --defined-color-11: #924dd6;
+  --defined-color-12: #924dd6;
+  --defined-color-13: #924dd6; */
 }
 
 * {
@@ -49,8 +74,17 @@ a:active {
   color: var(--link-color);
   cursor: pointer;
 
-  &.active, &:hover {
+  &.active,
+  &:hover {
     background-color: var(--link-active-bg-color);
     border-radius: 10%;
   }
+}
+
+router-outlet {
+  display: none;
+}
+
+.max-height {
+  max-height: 100%;
 }

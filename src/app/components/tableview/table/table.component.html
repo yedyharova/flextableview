@@ -1,1 +1,38 @@
-<p>table works!</p>
+<div *ngIf="tInstance?.ownProperties as cols" class="flex-table-container">
+  <div class="flex-table header">
+    <ng-container *ngFor="let col of cols">
+      <span>{{ tInstance.getTitle(col) }}</span>
+    </ng-container>
+  </div>
+
+  <div class="flex-body">
+    <div class="flex-table" *ngFor="let row of data">
+      <ng-container *ngFor="let col of cols">
+        <div class="flex-cell">
+          <span
+            ngxClipboard
+            [cbContent]="row.getFormattedValue(col)"
+            (click)="showCopiedMsg(row.getFormattedValue(col))"
+            >{{ row.getFormattedValue(col) }}</span
+          >
+          <div class="flex-sub-cell">
+            <span *ngIf="!row.getExtensionInfo(col)?.length; else tags">{{
+              row.getExtensionInfo(col)
+            }}</span>
+            <ng-template #tags>
+              <span
+                class="tag"
+                ngxClipboard
+                (click)="showCopiedMsg(tag)"
+                [cbContent]="tag"
+                *ngFor="let tag of row.getExtensionInfo(col); let i = index"
+                [ngStyle]="{ 'background-color': getTagColor(i) }"
+                >{{ tag }}</span
+              >
+            </ng-template>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

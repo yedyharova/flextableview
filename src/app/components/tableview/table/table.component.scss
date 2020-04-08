@@ -1,0 +1,52 @@
+.flex-table {
+  display: flex;
+  justify-content: space-around;
+  > * {
+    display: flex;
+    width: 100%;
+    padding: 0.5em;
+  }
+
+  &.header {
+    background-color: var(--defined-color-1);
+    margin-top: 2em;
+
+    > * {
+      font-weight: bolder;
+    }
+  }
+}
+
+.flex-table-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+}
+
+.flex-body {
+  overflow: auto;
+}
+
+.flex-cell {
+  flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:not(:first-child) {
+    margin-left: 1em;
+  }
+}
+
+.flex-sub-cell {
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  margin: 0.1em;
+  padding: 0 0.7em;
+  border-radius: 10px/10px;
+  font-size: small;
+  cursor: pointer;
+}

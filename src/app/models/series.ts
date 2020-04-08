@@ -1,12 +1,40 @@
 import { Store, StoreConfig, Query } from "@datorama/akita";
 import { Injectable } from "@angular/core";
+import { ColMetaData, ColTypes } from "@common/colmetadata.decorator";
+import { ModelBase } from "@common/ModelBase";
+import { Col } from "@common/col.decorator";
 
-export class Series {
+export class Series extends ModelBase {
+  constructor(s?: Series) {
+    super();
+
+    if (s) {
+      this.id = s.id;
+      this.name = s.name;
+      this.network = s.network;
+      this.premiere = s.premiere;
+      this.season = s.season;
+      this.genres = s.genres;
+    }
+  }
+
   id: string;
+
+  @Col()
+  @ColMetaData({ extensionInfo: "genres" })
   name: string;
-  premiere: string;
-  genres: string[];
+
+  @Col()
+  season: number;
+
+  @Col()
   network: string;
+
+  @Col()
+  @ColMetaData({ colType: ColTypes.DATE, title: "Premiere day" })
+  premiere: string;
+
+  genres: string[];
 }
 
 export interface SeriesState {

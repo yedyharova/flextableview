@@ -3,222 +3,501 @@
     {
       "id": "americancrime",
       "name": "American Crime",
-      "year": 2015,
-      "genre": ["Сrime Drama"],
-      "network": "ABC"
+      "premiere": "10.05.2015",
+      "genres": ["Сrime Drama"],
+      "network": "ABC",
+      "season": 1
     },
     {
       "id": "ashvsevildead",
       "name": "Ash vs Evil Dead",
-      "year": 0,
-      "genre": ["Supernatural", "Comedy", "Horror", "Fantasy", "Action"],
-      "network": "Starz"
+      "premiere": "10.05.2015",
+      "genres": ["Supernatural", "Comedy", "Horror", "Fantasy", "Action"],
+      "network": "Starz",
+      "season": 1
     },
     {
       "id": "americanhorrorstory",
       "name": "American Horror Story",
-      "year": "05.10.2011",
-      "genre": ["Horror"],
-      "network": "FX"
+      "premiere": "05.10.2011",
+      "genres": ["Horror"],
+      "network": "FX",
+      "season": 1
     },
     {
       "id": "blackmirror",
       "name": "Black Mirror",
-      "year": "04.12.2011",
-      "genre": ["Science Fiction"],
-      "network": "Netflix"
+      "premiere": "04.12.2011",
+      "genres": ["Science Fiction"],
+      "network": "Netflix",
+      "season": 1
     },
     {
       "id": "bloodline",
       "name": "Bloodline",
-      "year": "20.03.2015",
-      "genre": ["Drama"],
-      "network": "Netflix"
+      "premiere": "03.20.2015",
+      "genres": ["Drama"],
+      "network": "Netflix",
+      "season": 1
     },
     {
       "id": "thecrown",
       "name": "The Crown",
-      "year": "04.11.2016",
-      "genre": ["Drama"],
-      "network": "Netflix"
+      "premiere": "04.11.2016",
+      "genres": ["Drama"],
+      "network": "Netflix",
+      "season": 1
     },
     {
       "id": "dark",
       "name": "Dark",
-      "year": "01.12.2017",
-      "genre": ["Drama"],
-      "network": "Netflix"
+      "premiere": "01.12.2017",
+      "genres": ["Drama"],
+      "network": "Netflix",
+      "season": 1
     },
     {
       "id": "deadtome",
       "name": "Dead to Me",
-      "year": "03.05.2019",
-      "genre": ["Comedy"],
-      "network": "Netflix"
+      "premiere": "03.05.2019",
+      "genres": ["Comedy"],
+      "network": "Netflix",
+      "season": 1
     },
     {
       "id": "dexter",
       "name": "Dexter",
-      "year": "01.10.2006",
-      "genre": ["Drama"],
-      "network": "ShowTime"
+      "premiere": "01.10.2006",
+      "genres": ["Drama"],
+      "network": "ShowTime",
+      "season": 1
     },
     {
       "id": "dracula",
       "name": "Dracula",
-      "year": "01.01.2020",
-      "genre": ["Horror"],
-      "network": "Netflix"
+      "premiere": "01.01.2020",
+      "genres": ["Horror"],
+      "network": "Netflix",
+      "season": 1
     },
     {
       "id": "theendofthefuckingworld",
       "name": "The End of the Fucking World",
-      "year": "24.10.2017",
-      "genre": ["Drama", "Comedy"],
-      "network": "Channel 4"
+      "premiere": "10.24.2017",
+      "genres": ["Drama", "Comedy"],
+      "network": "Channel 4",
+      "season": 1
     },
     {
       "id": "glow",
       "name": "GLOW",
-      "year": "23.06.2017",
-      "genre": ["Drama", "Criminal"],
-      "network": "Netflix"
+      "premiere": "06.23.2017",
+      "genres": ["Drama", "Criminal"],
+      "network": "Netflix",
+      "season": 1
     },
     {
       "id": "godless",
       "name": "Godless",
-      "year": "22.11.2017",
-      "genre": ["Drama"],
-      "network": "Netflix"
+      "premiere": "11.22.2017",
+      "genres": ["Drama"],
+      "network": "Netflix",
+      "season": 1
     },
     {
       "id": "greatnews",
       "name": "Great News",
-      "year": "25.04.2017",
-      "genre": ["Comedy"],
-      "network": "NBC"
+      "premiere": "04.25.2017",
+      "genres": ["Comedy"],
+      "network": "NBC",
+      "season": 1
     },
     {
       "id": "haltandcatchfire",
       "name": "Halt and Catch Fire",
-      "year": "01.06.2014",
-      "genre": ["Drama"],
-      "network": "AMC"
+      "premiere": "01.06.2014",
+      "genres": ["Drama"],
+      "network": "AMC",
+      "season": 1
     },
     {
       "id": "houseofcards",
       "name": "House of Cards",
-      "year": "01.02.2013",
-      "genre": ["Drama"],
-      "network": "Netflix"
+      "premiere": "01.02.2013",
+      "genres": ["Drama"],
+      "network": "Netflix",
+      "season": 1
     },
     {
       "id": "theinbetweeners",
       "name": "The Inbetweeners",
-      "year": "01.05.2008",
-      "genre": ["Comedy"],
-      "network": "E4"
+      "premiere": "01.05.2008",
+      "genres": ["Comedy"],
+      "network": "E4",
+      "season": 1
     },
     {
       "id": "*iamnotokaywiththis",
       "name": "*I Am Not Okay With This",
-      "year": "26.02.2020",
-      "genre": ["Comedy", "Drama"],
-      "network": "Netflix"
+      "premiere": "02.26.2020",
+      "genres": ["Comedy", "Drama"],
+      "network": "Netflix",
+      "season": 1
     },
     {
       "id": "ithinkyoushouldleave",
       "name": "I Think You Should Leave",
-      "year": "23.04.2019",
-      "genre": ["Comedy"],
-      "network": "Netflix"
+      "premiere": "04.23.2019",
+      "genres": ["Comedy"],
+      "network": "Netflix",
+      "season": 1
     },
     {
       "id": "masterofnone",
       "name": "Master of None",
-      "year": "06.11.2015",
-      "genre": ["Comedy"],
-      "network": "Netflix"
+      "premiere": "06.11.2015",
+      "genres": ["Comedy"],
+      "network": "Netflix",
+      "season": 1
     },
     {
       "id": "maniac",
       "name": "Maniac",
-      "year": "21.09.2018",
-      "genre": ["Comedy"],
-      "network": "Netflix"
+      "premiere": "09.21.2018",
+      "genres": ["Comedy"],
+      "network": "Netflix",
+      "season": 1
     },
     {
       "id": "makingamurderer",
       "name": "Making a Murderer",
-      "year": "18.12.2015",
-      "genre": ["Detective"],
-      "network": "Netflix"
+      "premiere": "12.18.2015",
+      "genres": ["Detective"],
+      "network": "Netflix",
+      "season": 1
     },
     {
       "id": "nursejackie",
       "name": "Nurse Jackie",
-      "year": "08.06.2009",
-      "genre": ["Drama"],
-      "network": "Showtime"
+      "premiere": "08.06.2009",
+      "genres": ["Drama"],
+      "network": "Showtime",
+      "season": 1
     },
     {
       "id": "newgirl",
       "name": "New girl",
-      "year": "20.09.2011",
-      "genre": ["Comedy"],
-      "network": "Fox"
+      "premiere": "09.20.2011",
+      "genres": ["Comedy"],
+      "network": "Fox",
+      "season": 1
     },
     {
       "id": "theoffice",
       "name": "The Office",
-      "year": "25.03.2005",
-      "genre": ["Comedy"],
-      "network": "NBC"
+      "premiere": "03.25.2005",
+      "genres": ["Comedy"],
+      "network": "NBC",
+      "season": 1
     },
     {
       "id": "onmyblock",
       "name": "On My Block",
-      "year": "16.03.2018",
-      "genre": ["Comedy"],
-      "network": "Netflix"
+      "premiere": "03.16.2018",
+      "genres": ["Comedy"],
+      "network": "Netflix",
+      "season": 1
     },
     {
       "id": "orangeisthenewblack",
       "name": "Orange Is the New Black",
-      "year": "11.06.2013",
-      "genre": ["Comedy", "Drama"],
-      "network": "Netflix"
+      "premiere": "11.06.2013",
+      "genres": ["Comedy", "Drama"],
+      "network": "Netflix",
+      "season": 1
     },
     {
       "id": "onedayatatime",
       "name": "One Day at a Time",
-      "year": "06.01.2017",
-      "genre": ["Comedy"],
-      "network": "Netflix"
+      "premiere": "06.01.2017",
+      "genres": ["Comedy"],
+      "network": "Netflix",
+      "season": 1
     },
     {
       "id": "peeweesplayhouse",
       "name": "Pee-wees Playhouse",
-      "year": "13.09.1986",
-      "genre": ["Comedy"],
-      "network": "CBS"
+      "premiere": "09.13.1986",
+      "genres": ["Comedy"],
+      "network": "CBS",
+      "season": 1
     },
     {
       "id": "parksandrecreation",
       "name": "Parks and Recreation",
-      "year": "09.04.2009",
-      "genre": ["Comedy"],
-      "network": "NBC"
+      "premiere": "09.04.2009",
+      "genres": ["Comedy"],
+      "network": "NBC",
+      "season": 1
     },
     {
       "id": "ozark",
       "name": "Ozark",
-      "year": "21.06.2017",
-      "genre": ["Drama"],
-      "network": "Netflix"
+      "premiere": "06.21.2017",
+      "genres": ["Drama"],
+      "network": "Netflix",
+      "season": 1
+    },
+    {
+      "id": "americancrime",
+      "name": "American Crime",
+      "premiere": "06.21.2015",
+      "genres": ["Сrime Drama"],
+      "network": "ABC",
+      "season": 2
+    },
+    {
+      "id": "ashvsevildead",
+      "name": "Ash vs Evil Dead",
+      "premiere": "06.21.2015",
+      "genres": ["Supernatural", "Comedy", "Horror", "Fantasy", "Action"],
+      "network": "Starz",
+      "season": 2
+    },
+    {
+      "id": "americanhorrorstory",
+      "name": "American Horror Story",
+      "premiere": "05.10.2011",
+      "genres": ["Horror"],
+      "network": "FX",
+      "season": 2
+    },
+    {
+      "id": "blackmirror",
+      "name": "Black Mirror",
+      "premiere": "04.12.2011",
+      "genres": ["Science Fiction"],
+      "network": "Netflix",
+      "season": 2
+    },
+    {
+      "id": "bloodline",
+      "name": "Bloodline",
+      "premiere": "03.20.2015",
+      "genres": ["Drama"],
+      "network": "Netflix",
+      "season": 2
+    },
+    {
+      "id": "thecrown",
+      "name": "The Crown",
+      "premiere": "04.11.2016",
+      "genres": ["Drama"],
+      "network": "Netflix",
+      "season": 2
+    },
+    {
+      "id": "dark",
+      "name": "Dark",
+      "premiere": "01.12.2017",
+      "genres": ["Drama"],
+      "network": "Netflix",
+      "season": 2
+    },
+    {
+      "id": "deadtome",
+      "name": "Dead to Me",
+      "premiere": "03.05.2019",
+      "genres": ["Comedy"],
+      "network": "Netflix",
+      "season": 2
+    },
+    {
+      "id": "dexter",
+      "name": "Dexter",
+      "premiere": "01.10.2006",
+      "genres": ["Drama"],
+      "network": "ShowTime",
+      "season": 2
+    },
+    {
+      "id": "dracula",
+      "name": "Dracula",
+      "premiere": "01.01.2020",
+      "genres": ["Horror"],
+      "network": "Netflix",
+      "season": 2
+    },
+    {
+      "id": "theendofthefuckingworld",
+      "name": "The End of the Fucking World",
+      "premiere": "10.24.2017",
+      "genres": ["Drama", "Comedy"],
+      "network": "Channel 4",
+      "season": 2
+    },
+    {
+      "id": "glow",
+      "name": "GLOW",
+      "premiere": "06.23.2017",
+      "genres": ["Drama", "Criminal"],
+      "network": "Netflix",
+      "season": 2
+    },
+    {
+      "id": "godless",
+      "name": "Godless",
+      "premiere": "11.22.2017",
+      "genres": ["Drama"],
+      "network": "Netflix",
+      "season": 2
+    },
+    {
+      "id": "greatnews",
+      "name": "Great News",
+      "premiere": "04.25.2017",
+      "genres": ["Comedy"],
+      "network": "NBC",
+      "season": 2
+    },
+    {
+      "id": "haltandcatchfire",
+      "name": "Halt and Catch Fire",
+      "premiere": "01.06.2014",
+      "genres": ["Drama"],
+      "network": "AMC",
+      "season": 2
+    },
+    {
+      "id": "houseofcards",
+      "name": "House of Cards",
+      "premiere": "01.02.2013",
+      "genres": ["Drama"],
+      "network": "Netflix",
+      "season": 2
+    },
+    {
+      "id": "theinbetweeners",
+      "name": "The Inbetweeners",
+      "premiere": "01.05.2008",
+      "genres": ["Comedy"],
+      "network": "E4",
+      "season": 2
+    },
+    {
+      "id": "*iamnotokaywiththis",
+      "name": "*I Am Not Okay With This",
+      "premiere": "02.26.2020",
+      "genres": ["Comedy", "Drama"],
+      "network": "Netflix",
+      "season": 2
+    },
+    {
+      "id": "ithinkyoushouldleave",
+      "name": "I Think You Should Leave",
+      "premiere": "04.23.019",
+      "genres": ["Comedy"],
+      "network": "Netflix",
+      "season": 2
+    },
+    {
+      "id": "masterofnone",
+      "name": "Master of None",
+      "premiere": "06.11.2015",
+      "genres": ["Comedy"],
+      "network": "Netflix",
+      "season": 2
+    },
+    {
+      "id": "maniac",
+      "name": "Maniac",
+      "premiere": "09.21.2018",
+      "genres": ["Comedy"],
+      "network": "Netflix",
+      "season": 2
+    },
+    {
+      "id": "makingamurderer",
+      "name": "Making a Murderer",
+      "premiere": "12.18.2015",
+      "genres": ["Detective"],
+      "network": "Netflix",
+      "season": 2
+    },
+    {
+      "id": "nursejackie",
+      "name": "Nurse Jackie",
+      "premiere": "08.06.2009",
+      "genres": ["Drama"],
+      "network": "Showtime",
+      "season": 2
+    },
+    {
+      "id": "newgirl",
+      "name": "New girl",
+      "premiere": "09.20.2011",
+      "genres": ["Comedy"],
+      "network": "Fox",
+      "season": 2
+    },
+    {
+      "id": "theoffice",
+      "name": "The Office",
+      "premiere": "03.25.2005",
+      "genres": ["Comedy"],
+      "network": "NBC",
+      "season": 2
+    },
+    {
+      "id": "onmyblock",
+      "name": "On My Block",
+      "premiere": "03.16.2018",
+      "genres": ["Comedy"],
+      "network": "Netflix",
+      "season": 2
+    },
+    {
+      "id": "orangeisthenewblack",
+      "name": "Orange Is the New Black",
+      "premiere": "11.06.2013",
+      "genres": ["Comedy", "Drama"],
+      "network": "Netflix",
+      "season": 2
+    },
+    {
+      "id": "onedayatatime",
+      "name": "One Day at a Time",
+      "premiere": "06.01.2017",
+      "genres": ["Comedy"],
+      "network": "Netflix",
+      "season": 2
+    },
+    {
+      "id": "peeweesplayhouse",
+      "name": "Pee-wees Playhouse",
+      "premiere": "09.13.1986",
+      "genres": ["Comedy"],
+      "network": "CBS",
+      "season": 2
+    },
+    {
+      "id": "parksandrecreation",
+      "name": "Parks and Recreation",
+      "premiere": "09.04.2009",
+      "genres": ["Comedy"],
+      "network": "NBC",
+      "season": 2
+    },
+    {
+      "id": "ozark",
+      "name": "Ozark",
+      "premiere": "06.21.2017",
+      "genres": ["Drama"],
+      "network": "Netflix",
+      "season": 1
     }
   ],
-  "genres": [
+  "genress": [
     "Crime drama",
     "Supernatural",
     "Comedy",

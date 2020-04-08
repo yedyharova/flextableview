@@ -1,25 +1,27 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { TableviewComponent } from './tableview.component';
+import { TableViewComponent } from "./tableview.component";
+import { Series } from "@models/series";
 
-describe('TableviewComponent', () => {
-  let component: TableviewComponent;
-  let fixture: ComponentFixture<TableviewComponent>;
+describe("TableviewComponent", () => {
+  let component: TableViewComponent<Series>;
+  let fixture: ComponentFixture<TableViewComponent<Series>>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableviewComponent ]
-    })
-    .compileComponents();
+      declarations: [TableViewComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TableviewComponent);
+    fixture = TestBed.createComponent<TableViewComponent<Series>>(
+      TableViewComponent
+    );
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
