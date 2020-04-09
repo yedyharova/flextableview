@@ -50,3 +50,13 @@
   font-size: small;
   cursor: pointer;
 }
+
+.flex-header {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  fa-icon {
+    margin-left: 1em;
+    opacity: 0.5;
+  }
+}

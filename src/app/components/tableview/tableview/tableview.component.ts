@@ -19,7 +19,6 @@ export class TableViewComponent<T extends ModelBase> implements OnInit {
   @Input() data$: PagedResultGetter<T>;
   @Input() filterCols: string[];
   @Input() searchCols: string[];
-  @Input() sortCols: string[];
   currentPage: number = 1;
   pageSizes: number[] = [5, 10, 20, 50];
   private _pageSize: number = 20;

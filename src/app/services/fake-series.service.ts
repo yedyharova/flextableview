@@ -1,9 +1,15 @@
 import { Injectable } from "@angular/core";
-import { Observable, Subject, of } from "rxjs";
+import { Observable, Subject, of, combineLatest } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { Series, SeriesStore, SeriesQuery } from "@models/series";
 import { map, switchMap } from "rxjs/operators";
-import { PagedResultGetter } from "@common/PagedResultGetter";
+import {
+  PagedResultGetter,
+  sortCol$,
+  sortOrder$,
+} from "@common/PagedResultGetter";
+import { fieldsMetaData } from "@common/colmetadata.decorator";
+import { DatePipe } from "@angular/common";
 
 @Injectable({
   providedIn: "root",
@@ -25,16 +31,47 @@ export class SeriesService {
       });
   }
 
-  series$: Observable<Series[]> = this.seriesQuery.select(
-    (store) =>
-      store.series.map((s) => {
-        return new Series(s);
-      }) //TODO check
-  );
+  series$: Observable<Series[]> = this.seriesQuery.select((store) => {
+    let series = [...store.series];
+    const sortCol = sortCol$.getValue();
+    if (sortCol) {
+      series = series.sort((sa, sb) => {
+        let result: boolean;
+
+        if (sa[sortCol] === sb[sortCol]) {
+          return 0;
+        }
+
+        let a = sa[sortCol];
+        let b = sb[sortCol];
+
+        const colsMetadata = fieldsMetaData
+          .get(new Series().constructor)
+          .get(sortCol);
+        if (colsMetadata && colsMetadata.pipe instanceof DatePipe) {
+          a = new Date(sa[sortCol]);
+          b = new Date(sb[sortCol]);
+        }
+
+        if (sortOrder$.getValue()) {
+          result = a < b;
+        } else {
+          result = a > b;
+        }
+
+        return result ? 1 : -1;
+      });
+    }
+
+    return series.map((s) => {
+      return new Series(s);
+    }); //TODO check
+  });
   seriesPaged$: PagedResultGetter<Series> = ((
     page: number,
     pageSize: number
   ): Observable<Series[]> => {
+    page--;
     return this.series$.pipe(
       switchMap((series: Series[]) =>
         of(series.slice(page * pageSize, page * pageSize + pageSize))
