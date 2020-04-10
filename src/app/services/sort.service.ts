@@ -35,9 +35,17 @@ export class SortService {
     this._sortOrder$.next(sortOrder);
   }
 
+  dropDownFilters: { [col: string]: Observable<string[]> } = {};
+  tagsColors: string[] = [];
+
   private _filters: { [col: string]: any } = {};
   get filters(): { [col: string]: any } {
     return this._filters;
+  }
+  clearFilters() {
+    this._filters = {};
+    this.paginationService.page = 1;
+    this._filtersChanged$.next();
   }
   setFilter(col: string, value: any) {
     if (

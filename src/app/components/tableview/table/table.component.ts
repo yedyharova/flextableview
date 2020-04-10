@@ -32,8 +32,12 @@ export class TableComponent<T extends ModelBase> implements OnInit {
   }
   tInstance: T;
 
-  getTagColor(index: number) {
-    return "var(--defined-color-" + index + ")";
+  getTagColor(tag: string) {
+    return (
+      "var(--defined-color-" +
+      (this.sortService.tagsColors.indexOf(tag) + 1) +
+      ")"
+    );
   }
 
   constructor(

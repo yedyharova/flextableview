@@ -4,7 +4,7 @@
       "id": "americancrime",
       "name": "American Crime",
       "premiere": "10.05.2015",
-      "genres": ["Сrime Drama"],
+      "genres": ["Crime drama"],
       "network": "ABC",
       "season": 1
     },
@@ -28,7 +28,7 @@
       "id": "blackmirror",
       "name": "Black Mirror",
       "premiere": "04.12.2011",
-      "genres": ["Science Fiction"],
+      "genres": ["Science fiction"],
       "network": "Netflix",
       "season": 1
     },
@@ -276,7 +276,7 @@
       "id": "blackmirror",
       "name": "Black Mirror",
       "premiere": "04.12.2011",
-      "genres": ["Science Fiction"],
+      "genres": ["Science fiction"],
       "network": "Netflix",
       "season": 2
     },

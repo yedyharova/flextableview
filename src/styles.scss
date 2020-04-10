@@ -41,10 +41,10 @@ body {
   --defined-color-4: #828282;
   --defined-color-5: #f2eafa;
   --defined-color-6: #4f4f4f;
-  /*   --defined-color-7: #924dd6;
-  --defined-color-8: #924dd6;
-  --defined-color-9: #924dd6;
-  --defined-color-10: #924dd6;
+  --defined-color-7: #4dd676;
+  --defined-color-8: #add64d;
+  --defined-color-9: #7650ff;
+  /*--defined-color-10: #924dd6;
   --defined-color-11: #924dd6;
   --defined-color-12: #924dd6;
   --defined-color-13: #924dd6; */
@@ -112,6 +112,7 @@ router-outlet {
   + fa-icon {
     display: inline;
     margin-left: -1.5em;
+    margin-right: 0.5em;
     opacity: 0.5;
   }
 }

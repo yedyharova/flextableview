@@ -1,4 +1,8 @@
-import { fieldsMetaData, ColsMetaData } from "./colmetadata.decorator";
+import {
+  fieldsMetaData,
+  ColsMetaData,
+  colsWithMetadata,
+} from "./colmetadata.decorator";
 import { cols } from "./col.decorator";
 
 export class ModelBase {
@@ -6,6 +10,10 @@ export class ModelBase {
 
   get ownProperties(): string[] {
     return cols.get(this.constructor);
+  }
+
+  get colsWithMetadata(): string[] {
+    return colsWithMetadata;
   }
 
   constructor() {

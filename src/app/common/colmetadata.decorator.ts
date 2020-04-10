@@ -38,6 +38,7 @@ function setMetaData(
   } else {
     fieldsMetaDataMap.set(propertyKey, fieldsMetaDataObj);
   }
+  colsWithMetadata.push(propertyKey);
 }
 
 export const ColMetaData = (colsDescription: ColsDescription) => (
@@ -69,3 +70,4 @@ interface ColsDescription {
 }
 
 export const fieldsMetaData: Map<any, Map<string, ColsMetaData>> = new Map();
+export const colsWithMetadata: string[] = [];

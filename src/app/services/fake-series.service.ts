@@ -35,10 +35,12 @@ export class SeriesService {
     const filters = Object.keys(this.sortServise.filters);
     if (filters.length) {
       series = series.filter((s) => {
-        let result = false;
+        let result = true;
         filters.forEach((col) => {
           if (~s[col].toString().indexOf(this.sortServise.filters[col])) {
-            result = true;
+            result = result && true;
+          } else {
+            result = result && false;
           }
         });
         return result;
@@ -101,6 +103,7 @@ export class SeriesService {
   genres$: Observable<string[]> = this.seriesQuery.select(
     (store) => store.genres
   );
+  genres: string[] = this.seriesQuery.getValue().genres;
   networks$: Observable<string[]> = this.seriesQuery.select(
     (store) => store.networks
   );

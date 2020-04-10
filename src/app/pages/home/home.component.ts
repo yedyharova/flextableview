@@ -7,6 +7,7 @@ import {
 import { SeriesService } from "@services/fake-series.service";
 import { Series } from "@models/series";
 import { Observable } from "rxjs";
+import { SortService } from "@services/sort.service";
 
 @Component({
   selector: "dm-home",
@@ -15,12 +16,17 @@ import { Observable } from "rxjs";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit {
-  constructor(private seriesService: SeriesService) {}
+  constructor(
+    private seriesService: SeriesService,
+    private sortService: SortService
+  ) {}
 
   tableData$: Observable<Series[]> = this.seriesService.seriesPaged$;
   tableType: Type<Series> = Series;
 
   ngOnInit(): void {
     this.seriesService.forceGetSeries();
+    this.sortService.dropDownFilters["genres"] = this.seriesService.genres$;
+    this.sortService.tagsColors = this.seriesService.genres;
   }
 }

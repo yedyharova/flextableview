@@ -30,6 +30,8 @@ export class FilterComponent<T> extends BaseComponent implements OnInit {
     super();
   }
 
+  dropdownFilters = this.sortService.dropDownFilters;
+
   setFilter(col, value) {
     this._filterChanged.next({ col: col, value: value });
   }

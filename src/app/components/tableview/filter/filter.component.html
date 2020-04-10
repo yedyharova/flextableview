@@ -1,4 +1,4 @@
-<div *ngIf="tInstance?.ownProperties as cols" class="flex-table-container">
+<div *ngIf="tInstance?.colsWithMetadata as cols" class="flex-table-container">
   <ng-container *ngFor="let col of cols">
     <ng-container *ngIf="tInstance.getFilterType(col) as filterType">
       <ng-container [ngSwitch]="filterType">
@@ -11,7 +11,27 @@
           /><fa-icon icon="search"></fa-icon>
         </ng-container>
 
-        <ng-container *ngSwitchCase="filterTypes.DROPDOWN"></ng-container>
+        <ng-container *ngSwitchCase="filterTypes.DROPDOWN">
+          <select
+            class="select"
+            (change)="
+              setFilter(
+                col,
+                $event.target.value === 'null' ? null : $event.target.value
+              )
+            "
+          >
+            <option [value]="null" [selected]="true">{{
+              tInstance.getTitle(col)
+            }}</option>
+
+            <option
+              *ngFor="let elem of dropdownFilters[col] | async"
+              [value]="elem"
+              >{{ elem }}</option
+            >
+          </select>
+        </ng-container>
 
         <ng-container *ngSwitchCase="filterTypes.YEAR">
           <select

@@ -41,7 +41,7 @@
                 (click)="showCopiedMsg(tag)"
                 [cbContent]="tag"
                 *ngFor="let tag of row.getExtensionInfo(col); let i = index"
-                [ngStyle]="{ 'background-color': getTagColor(i) }"
+                [ngStyle]="{ 'background-color': getTagColor(tag) }"
                 >{{ tag }}</span
               >
             </ng-template>
