@@ -22,7 +22,6 @@ export class ModelBase {
     } catch (exception) {
       console.error("wrong transformation for", this[propertyKey]);
     }
-
     return formattedValue;
   }
 
@@ -35,6 +34,11 @@ export class ModelBase {
     const metaData = this.metaDataMap?.get(propertyKey);
     const extensionInfo = metaData?.extensionInfo;
     return extensionInfo && this.getFormattedValue(extensionInfo);
+  }
+
+  getFilterType(propertyKey: string): string {
+    const metaData = this.metaDataMap?.get(propertyKey);
+    return metaData?.filterType;
   }
 
   private _getPipe(propertyKey: string): any {

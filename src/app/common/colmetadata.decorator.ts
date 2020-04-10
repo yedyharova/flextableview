@@ -6,16 +6,24 @@ export enum ColTypes {
   NUMBER = "number",
 }
 
+export enum FilterTypes {
+  STRING = "string",
+  DROPDOWN = "dropdown",
+  YEAR = "year",
+}
+
 function setMetaData(
   target: any,
   propertyKey: string,
   colType?: ColTypes,
   title?: string,
-  extensionInfo?: string
+  extensionInfo?: string,
+  filterType?: FilterTypes
 ) {
   const fieldsMetaDataObj: ColsMetaData = {};
   fieldsMetaDataObj.title = title || propertyKey.toLocaleUpperCase();
   fieldsMetaDataObj.extensionInfo = extensionInfo;
+  fieldsMetaDataObj.filterType = filterType;
   switch (colType) {
     case ColTypes.DATE:
       fieldsMetaDataObj.pipe = new DatePipe("en-us");
@@ -41,7 +49,8 @@ export const ColMetaData = (colsDescription: ColsDescription) => (
     propertyKey,
     colsDescription.colType,
     colsDescription.title,
-    colsDescription.extensionInfo
+    colsDescription.extensionInfo,
+    colsDescription.filterType
   );
 };
 
@@ -49,12 +58,14 @@ export interface ColsMetaData {
   title?: string;
   pipe?: any;
   extensionInfo?: string;
+  filterType?: FilterTypes;
 }
 
 interface ColsDescription {
   colType?: ColTypes;
   title?: string;
   extensionInfo?: string;
+  filterType?: FilterTypes;
 }
 
 export const fieldsMetaData: Map<any, Map<string, ColsMetaData>> = new Map();

@@ -1,1 +1,38 @@
-<p>filter works!</p>
+<div *ngIf="tInstance?.ownProperties as cols" class="flex-table-container">
+  <ng-container *ngFor="let col of cols">
+    <ng-container *ngIf="tInstance.getFilterType(col) as filterType">
+      <ng-container [ngSwitch]="filterType">
+        <ng-container *ngSwitchCase="filterTypes.STRING">
+          <input
+            class="input"
+            type="text"
+            (keyup)="setFilter(col, $event.target.value)"
+            [placeholder]="tInstance.getTitle(col)"
+          /><fa-icon icon="search"></fa-icon>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="filterTypes.DROPDOWN"></ng-container>
+
+        <ng-container *ngSwitchCase="filterTypes.YEAR">
+          <select
+            class="select"
+            (change)="
+              setFilter(
+                col,
+                $event.target.value === 'null' ? null : $event.target.value
+              )
+            "
+          >
+            <option [value]="null" [selected]="true">{{
+              tInstance.getTitle(col)
+            }}</option>
+
+            <option *ngFor="let year of years" [value]="year">{{
+              year
+            }}</option>
+          </select>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</div>

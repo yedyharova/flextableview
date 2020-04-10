@@ -31,7 +31,6 @@ export class TableComponent<T extends ModelBase> implements OnInit {
     this.tInstance = new t();
   }
   tInstance: T;
-  cols: string[] = [];
 
   getTagColor(index: number) {
     return "var(--defined-color-" + index + ")";
@@ -47,7 +46,7 @@ export class TableComponent<T extends ModelBase> implements OnInit {
     this.msgService.showMsg(`Value: [${value}] was copied.`);
   }
 
-  setSortConfig(col: string) {
+  setSort(col: string) {
     if (this.sortService.sortCol === col) {
       if (this.sortService.sortOrder === SortOrder.DESC) {
         this.sortService.sortCol = null;

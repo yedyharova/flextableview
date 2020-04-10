@@ -18,6 +18,7 @@ import {
   faCaretRight,
   faFastForward,
   faFastBackward,
+  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 
 @NgModule({
@@ -41,5 +42,6 @@ export class FlexTableViewModule {
     library.addIcons(faCaretRight);
     library.addIcons(faFastForward);
     library.addIcons(faFastBackward);
+    library.addIcons(faSearch);
   }
 }

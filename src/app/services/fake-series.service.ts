@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
-import { Observable, Subject, of, combineLatest } from "rxjs";
+import { Observable, Subject, of, combineLatest, forkJoin, empty } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { Series, SeriesStore, SeriesQuery } from "@models/series";
-import { map, switchMap } from "rxjs/operators";
+import { map, switchMap, tap, mapTo, take } from "rxjs/operators";
 import { fieldsMetaData } from "@common/colmetadata.decorator";
 import { DatePipe } from "@angular/common";
 import { PaginationService } from "./pagination.service";
@@ -31,8 +31,20 @@ export class SeriesService {
   }
 
   series$: Observable<Series[]> = this.seriesQuery.select((store) => {
-    this.paginationService.total = store.series.length;
     let series = [...store.series];
+    const filters = Object.keys(this.sortServise.filters);
+    if (filters.length) {
+      series = series.filter((s) => {
+        let result = false;
+        filters.forEach((col) => {
+          if (~s[col].toString().indexOf(this.sortServise.filters[col])) {
+            result = true;
+          }
+        });
+        return result;
+      });
+    }
+
     if (this.sortServise.sortCol) {
       series = series.sort((sa, sb) => {
         let result: boolean;
@@ -61,7 +73,7 @@ export class SeriesService {
         return result ? 1 : -1;
       });
     }
-
+    this.paginationService.total = series.length;
     return series.map((s) => {
       return new Series(s);
     }); //TODO check
@@ -69,18 +81,19 @@ export class SeriesService {
   seriesPaged$: Observable<Series[]> = combineLatest(
     this.paginationService.page$,
     this.paginationService.pageSize$,
-    this.sortServise.sortOrder$
+    this.sortServise.sortOrder$,
+    this.sortServise.filtersChanged$
   ).pipe(
     switchMap(([page, pageSize]) => {
       return this.series$.pipe(
-        switchMap((series: Series[]) =>
-          of(
+        switchMap((series: Series[]) => {
+          return of(
             series.slice(
               (page - 1) * pageSize,
               (page - 1) * pageSize + pageSize
             )
-          )
-        )
+          );
+        })
       );
     })
   );
@@ -105,7 +118,8 @@ export class SeriesService {
           genres: series.genres,
           networks: series.networks,
         });
-      })
+      }),
+      tap((_) => this.sortServise.setFilter(null, null))
     );
   }
 }

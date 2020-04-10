@@ -1,6 +1,10 @@
 import { Store, StoreConfig, Query } from "@datorama/akita";
 import { Injectable } from "@angular/core";
-import { ColMetaData, ColTypes } from "@common/colmetadata.decorator";
+import {
+  ColMetaData,
+  ColTypes,
+  FilterTypes,
+} from "@common/colmetadata.decorator";
 import { ModelBase } from "@common/ModelBase";
 import { Col } from "@common/col.decorator";
 
@@ -21,7 +25,7 @@ export class Series extends ModelBase {
   id: string;
 
   @Col()
-  @ColMetaData({ extensionInfo: "genres" })
+  @ColMetaData({ extensionInfo: "genres", filterType: FilterTypes.STRING })
   name: string;
 
   @Col()
@@ -31,9 +35,14 @@ export class Series extends ModelBase {
   network: string;
 
   @Col()
-  @ColMetaData({ colType: ColTypes.DATE, title: "Premiere day" })
+  @ColMetaData({
+    colType: ColTypes.DATE,
+    title: "PREMIERE DAY",
+    filterType: FilterTypes.YEAR,
+  })
   premiere: string;
 
+  @ColMetaData({ filterType: FilterTypes.DROPDOWN })
   genres: string[];
 }
 
