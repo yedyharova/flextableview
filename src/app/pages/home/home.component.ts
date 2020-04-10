@@ -7,7 +7,6 @@ import {
 import { SeriesService } from "@services/fake-series.service";
 import { Series } from "@models/series";
 import { Observable } from "rxjs";
-import { PagedResultGetter } from "@common/PagedResultGetter";
 
 @Component({
   selector: "dm-home",
@@ -18,15 +17,8 @@ import { PagedResultGetter } from "@common/PagedResultGetter";
 export class HomeComponent implements OnInit {
   constructor(private seriesService: SeriesService) {}
 
-  tableData$: PagedResultGetter<Series> = this.seriesService.seriesPaged$;
+  tableData$: Observable<Series[]> = this.seriesService.seriesPaged$;
   tableType: Type<Series> = Series;
-  tableFilters: {
-    ["genres"]: Observable<string[]>;
-    ["networks"]: Observable<string[]>;
-  } = {
-    genres: this.seriesService.genres$,
-    networks: this.seriesService.networks$,
-  };
 
   ngOnInit(): void {
     this.seriesService.forceGetSeries();

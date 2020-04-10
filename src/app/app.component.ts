@@ -7,6 +7,8 @@ import {
   transition,
   animate,
 } from "@angular/animations";
+import { BaseComponent } from "@common/base.component";
+import { takeUntil } from "rxjs/operators";
 
 @Component({
   selector: "app-root",
@@ -20,12 +22,14 @@ import {
     ]),
   ],
 })
-export class AppComponent {
+export class AppComponent extends BaseComponent {
   msg: string;
-  constructor(private msgService: MsgService) {}
+  constructor(private msgService: MsgService) {
+    super();
+  }
 
   ngOnInit() {
-    this.msgService.msg.subscribe((msg) => {
+    this.msgService.msg.pipe(takeUntil(this.unsubscribe$)).subscribe((msg) => {
       this.msg = msg;
     });
   }

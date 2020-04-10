@@ -3,13 +3,10 @@ import { Observable, Subject, of, combineLatest } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { Series, SeriesStore, SeriesQuery } from "@models/series";
 import { map, switchMap } from "rxjs/operators";
-import {
-  PagedResultGetter,
-  sortCol$,
-  sortOrder$,
-} from "@common/PagedResultGetter";
 import { fieldsMetaData } from "@common/colmetadata.decorator";
 import { DatePipe } from "@angular/common";
+import { PaginationService } from "./pagination.service";
+import { SortService } from "./sort.service";
 
 @Injectable({
   providedIn: "root",
@@ -18,7 +15,9 @@ export class SeriesService {
   constructor(
     private seriesStore: SeriesStore,
     private seriesQuery: SeriesQuery,
-    private http: HttpClient
+    private http: HttpClient,
+    private paginationService: PaginationService,
+    private sortServise: SortService
   ) {
     this._forceGetSeries$
       .pipe(
@@ -32,28 +31,28 @@ export class SeriesService {
   }
 
   series$: Observable<Series[]> = this.seriesQuery.select((store) => {
+    this.paginationService.total = store.series.length;
     let series = [...store.series];
-    const sortCol = sortCol$.getValue();
-    if (sortCol) {
+    if (this.sortServise.sortCol) {
       series = series.sort((sa, sb) => {
         let result: boolean;
 
-        if (sa[sortCol] === sb[sortCol]) {
+        if (sa[this.sortServise.sortCol] === sb[this.sortServise.sortCol]) {
           return 0;
         }
 
-        let a = sa[sortCol];
-        let b = sb[sortCol];
+        let a = sa[this.sortServise.sortCol];
+        let b = sb[this.sortServise.sortCol];
 
         const colsMetadata = fieldsMetaData
           .get(new Series().constructor)
-          .get(sortCol);
+          .get(this.sortServise.sortCol);
         if (colsMetadata && colsMetadata.pipe instanceof DatePipe) {
-          a = new Date(sa[sortCol]);
-          b = new Date(sb[sortCol]);
+          a = new Date(sa[this.sortServise.sortCol]);
+          b = new Date(sb[this.sortServise.sortCol]);
         }
 
-        if (sortOrder$.getValue()) {
+        if (this.sortServise.sortOrder) {
           result = a < b;
         } else {
           result = a > b;
@@ -67,17 +66,25 @@ export class SeriesService {
       return new Series(s);
     }); //TODO check
   });
-  seriesPaged$: PagedResultGetter<Series> = ((
-    page: number,
-    pageSize: number
-  ): Observable<Series[]> => {
-    page--;
-    return this.series$.pipe(
-      switchMap((series: Series[]) =>
-        of(series.slice(page * pageSize, page * pageSize + pageSize))
-      )
-    );
-  }).bind(this);
+  seriesPaged$: Observable<Series[]> = combineLatest(
+    this.paginationService.page$,
+    this.paginationService.pageSize$,
+    this.sortServise.sortOrder$
+  ).pipe(
+    switchMap(([page, pageSize]) => {
+      return this.series$.pipe(
+        switchMap((series: Series[]) =>
+          of(
+            series.slice(
+              (page - 1) * pageSize,
+              (page - 1) * pageSize + pageSize
+            )
+          )
+        )
+      );
+    })
+  );
+
   genres$: Observable<string[]> = this.seriesQuery.select(
     (store) => store.genres
   );
@@ -88,7 +95,7 @@ export class SeriesService {
   public forceGetSeries(): void {
     this._forceGetSeries$.next();
   }
-  private _forceGetSeries$: Subject<any> = new Subject();
+  private _forceGetSeries$: Subject<void> = new Subject();
 
   private getSeries$(): Observable<Series[]> {
     return this.http.get("assets/series.json").pipe(

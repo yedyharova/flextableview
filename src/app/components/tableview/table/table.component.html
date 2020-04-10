@@ -1,22 +1,18 @@
 <div *ngIf="tInstance?.ownProperties as cols" class="flex-table-container">
   <div class="flex-table header">
     <ng-container *ngFor="let col of cols">
-      <div class="flex-header" (click)="setSortConfig(col)">
+      <div class="flex-header" (click)="setSort(col)">
         <span>{{ tInstance.getTitle(col) }}</span>
         <fa-icon
-          *ngIf="
-            (sortColConfig$ | async) === col && (sortOrderConfig$ | async) === 1
-          "
+          *ngIf="(sortCol$ | async) === col && (sortOrder$ | async) === 1"
           icon="sort-down"
         ></fa-icon>
         <fa-icon
-          *ngIf="
-            (sortColConfig$ | async) === col && (sortOrderConfig$ | async) === 0
-          "
+          *ngIf="(sortCol$ | async) === col && (sortOrder$ | async) === 0"
           icon="sort-up"
         ></fa-icon>
         <fa-icon
-          *ngIf="(sortColConfig$ | async) !== col"
+          *ngIf="(sortCol$ | async) !== col"
           class="icon-placeholder"
           icon="sort"
         ></fa-icon>

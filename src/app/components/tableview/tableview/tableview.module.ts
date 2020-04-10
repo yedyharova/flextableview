@@ -4,7 +4,6 @@ import { TableViewComponent } from "./tableview.component";
 import { TableComponent } from "../table/table.component";
 import { FilterComponent } from "../filter/filter.component";
 import { PagerComponent } from "../pager/pager.component";
-import { SearchComponent } from "../search/search.component";
 import { ClipboardModule } from "ngx-clipboard";
 import {
   FontAwesomeModule,
@@ -15,6 +14,10 @@ import {
   faSort,
   faSortUp,
   faSortDown,
+  faCaretLeft,
+  faCaretRight,
+  faFastForward,
+  faFastBackward,
 } from "@fortawesome/free-solid-svg-icons";
 
 @NgModule({
@@ -25,7 +28,6 @@ import {
     TableComponent,
     FilterComponent,
     PagerComponent,
-    SearchComponent,
   ],
   exports: [TableViewComponent],
 })
@@ -35,5 +37,9 @@ export class FlexTableViewModule {
     library.addIcons(faSort);
     library.addIcons(faSortUp);
     library.addIcons(faSortDown);
+    library.addIcons(faCaretLeft);
+    library.addIcons(faCaretRight);
+    library.addIcons(faFastForward);
+    library.addIcons(faFastBackward);
   }
 }

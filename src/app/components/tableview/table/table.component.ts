@@ -4,12 +4,12 @@ import {
   ChangeDetectionStrategy,
   Input,
   Type,
-  ChangeDetectorRef,
 } from "@angular/core";
 import { ModelBase } from "@common/ModelBase";
 import { MsgService } from "@services/msg.service";
-import { SortOrder, sortCol$, sortOrder$ } from "@common/PagedResultGetter";
 import { Observable } from "rxjs";
+import { PaginationService } from "@services/pagination.service";
+import { SortService, SortOrder } from "@services/sort.service";
 
 @Component({
   selector: "dm-flex-table",
@@ -38,7 +38,9 @@ export class TableComponent<T extends ModelBase> implements OnInit {
   }
 
   constructor(
-    private cd: ChangeDetectorRef, private msgService: MsgService
+    /* private cd: ChangeDetectorRef, */ private msgService: MsgService,
+    private paginationService: PaginationService,
+    private sortService: SortService
   ) {}
 
   showCopiedMsg(value: string) {
@@ -46,24 +48,21 @@ export class TableComponent<T extends ModelBase> implements OnInit {
   }
 
   setSortConfig(col: string) {
-    const sortCol = sortCol$.getValue();
-    const sortOrder = sortOrder$.getValue();
-
-    if (sortCol === col) {
-      if (sortOrder === SortOrder.DESC) {
-        sortCol$.next(null);
+    if (this.sortService.sortCol === col) {
+      if (this.sortService.sortOrder === SortOrder.DESC) {
+        this.sortService.sortCol = null;
       } else {
-        sortOrder$.next(SortOrder.DESC);
+        this.sortService.sortOrder = SortOrder.DESC;
       }
     } else {
-      sortCol$.next(col);
-      sortOrder$.next(SortOrder.ASC);
+      this.sortService.sortCol = col;
+      this.sortService.sortOrder = SortOrder.ASC;
     }
-    this.cd.detectChanges();
+    this.paginationService.page = 1;
   }
 
-  sortColConfig$: Observable<string> = sortCol$.asObservable();
-  sortOrderConfig$: Observable<SortOrder> = sortOrder$.asObservable();
+  sortCol$: Observable<string> = this.sortService.sortCol$;
+  sortOrder$: Observable<SortOrder> = this.sortService.sortOrder$;
 
   ngOnInit(): void {}
 }

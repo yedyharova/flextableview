@@ -1,1 +1,35 @@
-<p>pager works!</p>
+<div class="flex-pager">
+  <fa-icon
+    icon="fast-backward"
+    (click)="fastBackward()"
+    [ngClass]="{ disabled: (page$ | async) === 1 }"
+  ></fa-icon>
+  <fa-icon
+    icon="caret-left"
+    (click)="pageBackward()"
+    [ngClass]="{ disabled: (page$ | async) === 1 }"
+  ></fa-icon>
+  <span
+    class="page"
+    *ngFor="let page of pages$ | async"
+    (click)="setPage(page)"
+    [ngClass]="{ current: (page$ | async) === page }"
+    >{{ page }}
+  </span>
+
+  <fa-icon
+    icon="caret-right"
+    (click)="pageForward()"
+    [ngClass]="{ disabled: (page$ | async) === (pages$ | async).length }"
+  ></fa-icon>
+  <fa-icon
+    icon="fast-forward"
+    (click)="fastForward()"
+    [ngClass]="{ disabled: (page$ | async) === (pages$ | async).length }"
+  ></fa-icon>
+  <select class="select" (change)="onPagSizeChange($event.target.value)">
+    <option *ngFor="let pageSize of pageSizes" [value]="pageSize">{{
+      pageSize
+    }}</option>
+  </select>
+</div>

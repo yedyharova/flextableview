@@ -1,5 +1,8 @@
-<dm-flex-table
-  class="max-height"
-  [data]="data$(currentPage, pageSize) | async"
-  [datatype]="datatype"
-></dm-flex-table>
+<div class="flex-container max-height">
+  <dm-flex-table
+    class="max-height"
+    [data]="data$ | async"
+    [datatype]="datatype"
+  ></dm-flex-table>
+  <flex-pager></flex-pager>
+</div>
