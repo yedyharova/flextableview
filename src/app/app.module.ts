@@ -9,6 +9,7 @@ import { HomeComponent } from "@pages/home/home.component";
 import { AboutComponent } from "@pages/about/about.component";
 import { FlexTableViewModule } from "@components/tableview/tableview/tableview.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 if (environment.production) {
   enableAkitaProdMode();
@@ -22,6 +23,7 @@ if (environment.production) {
     AppRoutingModule,
     HttpClientModule,
     FlexTableViewModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent],
